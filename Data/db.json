@@ -1,0 +1,12 @@
+{
+    "solutions": [
+        {"word": "crime", "id": 1},
+        {"word": "joker", "id": 2},
+        {"word": "flash", "id": 3},
+        {"word": "venom", "id": 4},
+        {"word": "wanda", "id": 5},
+        {"word": "bucky", "id": 6},
+        {"word": "angel", "id": 7},
+        {"word": "blade", "id": 8}
+    ]
+}
