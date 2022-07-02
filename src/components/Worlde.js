@@ -8,10 +8,10 @@ export default function Wordle({ solution }) {
     useEffect (() => {
         window.addEventListener('keyup', handleKeyup)
 
-        return () => window.removeEventListener('keyup, handleKeyup')
+        return () => window.removeEventListener('keyup', handleKeyup)
     }, [handleKeyup])
 
     return (
-        <div>Wordle</div>
+        <div>current guess: {currentGuess}</div>
     )
 }
