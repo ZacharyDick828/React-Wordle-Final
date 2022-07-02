@@ -4,7 +4,7 @@ const useWorlde = (solution) => {
 
     const [turn, setTurn] = useState(0)
     const [currentGuess, setCurrentGuess] = useState("")
-    const [guesses, setGuesses] = useState([])
+    const [guesses, setGuesses] = useState([...Array(6)])
     const [history, setHistory] = useState([])
     const [isCorrect, setIsCorrect] = useState(false)
 
@@ -30,8 +30,22 @@ const useWorlde = (solution) => {
     }
     // add new guess to the state of guesses
     // check if the word is correct
-    const addNewGuess = () => {
-
+    const addNewGuess = (formattedGuess) => {
+        if (currentGuess === solution) {
+            setIsCorrect(true)
+        }
+        setGuesses((prevGuesses) => {
+            let newGuesses = [...prevGuesses]
+            newGuesses[turn] = formattedGuess
+            return newGuesses
+        })
+        setHistory((prevHistory) => {
+            return [...prevHistory, currentGuess]
+        })
+        setTurn((prevTurn) => {
+            return prevTurn + 1
+        })
+        setCurrentGuess('')
     }
     // handle event (track current guess and add new guess when enter is hit)
     const handleKeyup = ({ key }) => {
@@ -50,7 +64,7 @@ const useWorlde = (solution) => {
                 return
             }
             const formatted = formatGuess()
-            console.log(formatted)
+            addNewGuess(formatted)
         }
 
         if (key === 'Backspace') {
