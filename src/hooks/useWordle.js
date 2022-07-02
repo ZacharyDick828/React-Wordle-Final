@@ -8,9 +8,25 @@ const useWorlde = (solution) => {
     const [history, setHistory] = useState([])
     const [isCorrect, setIsCorrect] = useState(false)
 
-    // format attempt into an array
+    // format attempts
     const formatGuess = () => {
-
+        let solutionArray = [...solution]
+        let formattedGuess = [...currentGuess].map((l) => {
+            return {key: l, color: 'grey'}
+        })
+        formattedGuess.forEach((l, i) => {
+            if(solutionArray[i] === l.key) {
+                formattedGuess[i].color = 'green'
+                solutionArray[i] = null
+            }
+        })
+        formattedGuess.forEach((l,i) => {
+            if (solutionArray.includes(l.key) && l.color !== 'green') {
+                formattedGuess[i].color = 'yellow'
+                solutionArray[solutionArray.indexOf(l.key)] = null
+            }
+        })
+        return formattedGuess
     }
     // add new guess to the state of guesses
     // check if the word is correct
@@ -19,6 +35,24 @@ const useWorlde = (solution) => {
     }
     // handle event (track current guess and add new guess when enter is hit)
     const handleKeyup = ({ key }) => {
+
+        if (key === 'Enter') {
+            if (turn > 5) {
+                console.log('no tries available')
+                return
+            }
+            if (history.includes(currentGuess)) {
+                console.log('already attempted')
+                return
+            }
+            if (currentGuess.length !== 5) {
+                console.log('word must be FIVE characters')
+                return
+            }
+            const formatted = formatGuess()
+            console.log(formatted)
+        }
+
         if (key === 'Backspace') {
             setCurrentGuess((prev) => {
                 return prev.slice(0, -1)
