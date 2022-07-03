@@ -1,13 +1,42 @@
 body {
   text-align: center;
-  font-size: 1em;
-  font-family: verdana;
-  margin: 0;
+  font-size: 2em;
+  font-family: fantasy;
+  margin: 2;
 }
 h1 {
-  font-size: 1.2em;
+  font-size: 2em;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
   margin: 0 0 30px 0;
   color: #333;
+}
+.row {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.row > div.green {
+  background: rgb(26, 163, 26);
+  border-color: green;
+}
+.row > div.yellow {
+  background: rgb(146, 146, 30);
+  border-color: green;
+}
+.row > div.grey {
+  background: grey;
+  border-color: black;
+}
+.row > div {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border: solid #bbb;
+  margin: 4px;
+  text-align: center;
+  line-height: 60px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2em;
 }
