@@ -83,3 +83,33 @@ h1 {
     color: #eee;
   }
 }
+
+.keypad {
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.keypad > div {
+  margin: 5px;
+  width: 40px;
+  height: 50px;
+  background:rgb(184, 162, 74);
+  display: inline-block;
+  border-radius: 5px;
+  line-height: 50px;
+}
+.keypad > div.green {
+  background:rgb(44, 149, 60);
+  color: #fff;
+  transition: all 0.5s ease-in;
+}
+.keypad > div.yellow {
+  background:rgb(184, 162, 74);
+  color: #fff;
+  transition: all 0.5s ease-in;
+}
+.keypad > div.grey {
+  background:rgb(107, 104, 96);
+  color: #fff;
+  transition: all 0.5s ease-in;
+}

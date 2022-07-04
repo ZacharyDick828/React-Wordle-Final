@@ -7,6 +7,7 @@ const useWorlde = (solution) => {
     const [guesses, setGuesses] = useState([...Array(6)])
     const [history, setHistory] = useState([])
     const [isCorrect, setIsCorrect] = useState(false)
+    const [usedKeys, setUsedKeys] = useState({})
 
     // format attempts
     const formatGuess = () => {
@@ -45,6 +46,27 @@ const useWorlde = (solution) => {
         setTurn((prevTurn) => {
             return prevTurn + 1
         })
+        setUsedKeys((prevUsedKeys) => {
+            let newKeys = {...prevUsedKeys}
+            
+            formattedGuess.forEach((l) => {
+                const currentColor = newKeys[l.key]
+
+                if (l.color === 'green') {
+                    newKeys[l.key] = 'green'
+                    return
+                }
+                if (l.color === 'yellow' && currentColor !== 'green') {
+                    newKeys [l.key] = 'yellow'
+                    return
+                }
+                if (l.color === 'grey' && currentColor !== 'green' && currentColor !== 'yellow') {
+                    newKeys [l.key] = 'grey'
+                    return
+                }
+            })
+            return newKeys
+        })
         setCurrentGuess('')
     }
     // handle event (track current guess and add new guess when enter is hit)
@@ -82,7 +104,7 @@ const useWorlde = (solution) => {
         }
     }
 
-    return {turn, currentGuess, guesses, isCorrect, handleKeyup}
+    return {turn, currentGuess, guesses, isCorrect, handleKeyup, usedKeys}
 }
 
 export default useWorlde
