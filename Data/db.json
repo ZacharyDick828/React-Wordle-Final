@@ -11,6 +11,8 @@
         {"word": "comic", "id": 9},
         {"word": "witch", "id": 10},
         {"word": "robin", "id": 11},
-        {"word": "super", "id": 12}
+        {"word": "super", "id": 12},
+        {"word": "frodo", "id": 13},
+        {"word": "shire", "id": 14}
     ]
 }

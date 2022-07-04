@@ -16,27 +16,70 @@ h1 {
   display: flex;
   justify-content: center;
 }
-.row > div.green {
-  background: rgb(26, 163, 26);
-  border-color: green;
-}
-.row > div.yellow {
-  background: rgb(146, 146, 30);
-  border-color: green;
-}
-.row > div.grey {
-  background: grey;
-  border-color: black;
-}
+
 .row > div {
   display: block;
   width: 60px;
   height: 60px;
-  border: solid #bbb;
-  margin: 4px;
+  border: solid rgb(4, 3, 3);
+  margin: 10px;
   text-align: center;
-  line-height: 60px;
+  line-height: 80px;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 2em;
+}
+
+.row > div.green {
+  --background: #3d883d;
+  --border-color: #0a100a;
+  animation: flip 0.5s ease forwards;
+}
+.row > div.grey {
+  --background: #a1a1a1;
+  --border-color: #080707;
+  animation: flip 0.6s ease forwards;
+}
+.row > div.yellow {
+  --background: #beaa52;
+  --border-color: #0f0f0d;
+  animation: flip 0.5s ease forwards;
+}
+
+.row > div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.row > div:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.row > div:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.row > div:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+/* keyframe animations */
+@keyframes flip {
+  0% {
+    transform: rotateX(0);
+    background: #fff;
+    border-color: #333;
+  }
+  45% {
+    transform: rotateX(90deg);
+    background: white;
+    border-color: #333;
+  }
+  55% {
+    transform: rotateX(90deg);
+    background: var(--background);
+    border-color: var(--border-color);
+  }
+  100% {
+    transform: rotateX(0deg);
+    background: var(--background);
+    border-color: var(--border-color);
+    color: #eee;
+  }
 }
