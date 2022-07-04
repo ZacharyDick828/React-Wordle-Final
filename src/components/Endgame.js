@@ -5,7 +5,7 @@ export default function Endgame({ isCorrect, turn, solution }) {
         <div className='endgame'>
             {isCorrect && (
                 <div>
-                    <h1> WINNERRRRRRR!!!!!!! YOU'RE A NERD GET SOME FRIENDS! </h1>
+                    <h1> WINNERRR! YOU'RE A NERD GET SOME FRIENDS! </h1>
                     <p className='solution'>{solution}</p>
                     <p>YOU FOUND THE SOLUTION IN {turn} TURNS!</p>
                 </div>
