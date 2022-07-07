@@ -5,7 +5,7 @@ function App() {
   const [solution, setSolution] = useState(null)
 
   useEffect(() => {
-    fetch('https://desolate-sea-85910.herokuapp.com/solutions')
+    fetch('https://desolate-sea-85910.herokuapp.com/')
     .then(res => res.json())
     .then(json => {
       // console.log(json)

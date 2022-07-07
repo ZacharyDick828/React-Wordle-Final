@@ -4,7 +4,7 @@ export default function Keypad({ usedKeys }) {
   const [letters, setLetters] = useState(null)
 
   useEffect(() => {
-    fetch('https://desolate-sea-85910.herokuapp.com/letters')
+    fetch('https://desolate-sea-85910.herokuapp.com/')
       .then(res => res.json())
       .then(json => {
         setLetters(json)
