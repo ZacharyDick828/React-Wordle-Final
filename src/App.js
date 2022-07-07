@@ -10,7 +10,7 @@ function App() {
     .then(json => {
       // console.log(json)
       const randomSolution = json[Math.floor(Math.random()*json.length)]
-      setSolution(randomSolution.word)
+      setSolution(randomSolution.Solution)
     })
   }, [setSolution])
   return (
