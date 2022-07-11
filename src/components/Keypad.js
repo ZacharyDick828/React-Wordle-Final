@@ -4,7 +4,7 @@ export default function Keypad({ usedKeys }) {
   const [letters, setLetters] = useState(null)
 
   useEffect(() => {
-    fetch('https://superlative-crumble-d01dda.netlify.app/letters')
+    fetch('https://nerdle-server.herokuapp.com/letters')
       .then(res => res.json())
       .then(json => {
         setLetters(json)
