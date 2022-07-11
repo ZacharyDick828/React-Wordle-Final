@@ -5,7 +5,7 @@ function App() {
   const [solution, setSolution] = useState(null)
 
   useEffect(() => {
-    fetch('https://nerdle-server.herokuapp.com/solutions')
+    fetch('https://superlative-crumble-d01dda.netlify.app/solutions')
     .then(res => res.json())
     .then(json => {
       // console.log(json)
