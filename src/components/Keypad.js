@@ -4,7 +4,7 @@ export default function Keypad({ usedKeys }) {
   const [letters, setLetters] = useState(null)
 
   useEffect(() => {
-    fetch('https://nerdle-server.herokuapp.com/letters')
+    fetch('https://nerdle-server.herokuapp.com/letters', { mode: 'no-cors'} )
       .then(res => res.json())
       .then(json => {
         setLetters(json)

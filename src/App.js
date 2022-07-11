@@ -5,7 +5,7 @@ function App() {
   const [solution, setSolution] = useState(null)
 
   useEffect(() => {
-    fetch('https://nerdle-server.herokuapp.com/solutions')
+    fetch('https://nerdle-server.herokuapp.com/solutions', { mode: 'no-cors'})
     .then(res => res.json())
     .then(json => {
       // console.log(json)
